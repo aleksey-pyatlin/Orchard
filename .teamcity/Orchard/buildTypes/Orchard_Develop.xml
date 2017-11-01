@@ -12,7 +12,7 @@
     <build-runners>
       <runner id="RUNNER_14" name="Restore packages" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="call nuget restore ISSOW.sln -Source &quot;https://api.nuget.org/v3/index.json&quot;" />
+          <param name="script.content" value="call nuget restore src\Orchard.sln -Source &quot;https://api.nuget.org/v3/index.json&quot;" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
