@@ -10,6 +10,13 @@
       <param name="Configuration" value="Debug" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_14" name="Restore packages" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="call nuget restore ISSOW.sln -Source &quot;https://api.nuget.org/v3/index.json&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_4" name="Build solution" type="VS.Solution">
         <parameters>
           <param name="build-file-path" value="src/Orchard.sln" />
@@ -50,13 +57,6 @@
           <param name="nunit_platform" value="MSIL" />
           <param name="nunit_version" value="NUnit-2.5.10" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_14" name="Restore packages" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="call nuget restore ISSOW.sln -Source &quot;https://api.nuget.org/v3/index.json&quot;" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
