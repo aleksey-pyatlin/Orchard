@@ -7,7 +7,9 @@
   <param name="branch" value="dev" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec" value="+:refs/heads/*" />
+  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/*
++:refs/pull/*/head
++:refs/pull/(*/merge)]]></param>
   <param name="teamcitySshKey" value="Orchard_rsa" />
   <param name="url" value="git@github.com:aleksey-pyatlin/Orchard.git" />
   <param name="useAlternates" value="true" />
