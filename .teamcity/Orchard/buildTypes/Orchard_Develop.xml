@@ -3,9 +3,6 @@
   <name>Orchard_Develop</name>
   <description />
   <settings>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_5" />
-    </disabled-settings>
     <parameters>
       <param name="Configuration" value="Debug" />
     </parameters>
@@ -27,13 +24,6 @@
           <param name="teamcity.step.mode" value="default" />
           <param name="toolsVersion" value="14.0" />
           <param name="vs.version" value="vs2015" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_5" name="Build" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="build.cmd" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
       <runner id="RUNNER_12" name="Run Tests" type="NUnit">
