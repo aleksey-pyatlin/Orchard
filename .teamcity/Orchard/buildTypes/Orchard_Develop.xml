@@ -10,6 +10,18 @@
       <param name="Configuration" value="Debug" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_4" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="src/Orchard.sln" />
+          <param name="msbuild.prop.Configuration" value="/p:StaticAnalysisEnabled=true" />
+          <param name="msbuild_version" value="14.0" />
+          <param name="run-platform" value="x86" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="14.0" />
+          <param name="vs.version" value="vs2015" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_5" name="Build" type="simpleRunner">
         <parameters>
           <param name="script.content" value="build.cmd" />
@@ -38,18 +50,6 @@
           <param name="nunit_platform" value="MSIL" />
           <param name="nunit_version" value="NUnit-2.5.10" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_4" name="" type="VS.Solution">
-        <parameters>
-          <param name="build-file-path" value="src/Orchard.sln" />
-          <param name="msbuild.prop.Configuration" value="/p:StaticAnalysisEnabled=true" />
-          <param name="msbuild_version" value="14.0" />
-          <param name="run-platform" value="x86" />
-          <param name="targets" value="Rebuild" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="toolsVersion" value="14.0" />
-          <param name="vs.version" value="vs2015" />
         </parameters>
       </runner>
     </build-runners>
