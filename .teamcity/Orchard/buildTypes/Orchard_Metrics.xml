@@ -50,7 +50,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="Orchard_Develop" />
+      <vcs-entry-ref root-id="Orchard_OrchardDevelop1" />
     </vcs-settings>
     <requirements />
     <build-triggers>
