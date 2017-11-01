@@ -40,6 +40,18 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_4" name="" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="src/Orchard.sln" />
+          <param name="msbuild.prop.Configuration" value="/p:StaticAnalysisEnabled=true" />
+          <param name="msbuild_version" value="14.0" />
+          <param name="run-platform" value="x86" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="14.0" />
+          <param name="vs.version" value="vs2015" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Orchard_Develop" />
