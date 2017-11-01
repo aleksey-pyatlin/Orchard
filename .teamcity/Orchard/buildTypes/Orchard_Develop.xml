@@ -13,9 +13,9 @@
       <runner id="RUNNER_4" name="Build solution" type="VS.Solution">
         <parameters>
           <param name="build-file-path" value="src/Orchard.sln" />
-          <param name="msbuild.prop.Configuration" value="/p:StaticAnalysisEnabled=true" />
           <param name="msbuild_version" value="14.0" />
           <param name="run-platform" value="x86" />
+          <param name="runnerArgs" value="/p:StaticAnalysisEnabled=true" />
           <param name="targets" value="Rebuild" />
           <param name="teamcity.step.mode" value="default" />
           <param name="toolsVersion" value="14.0" />
