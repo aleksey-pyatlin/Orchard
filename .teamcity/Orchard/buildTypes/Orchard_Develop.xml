@@ -52,6 +52,13 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_14" name="Restore packages" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="call nuget restore ISSOW.sln -Source &quot;https://api.nuget.org/v3/index.json&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Orchard_Develop" />
