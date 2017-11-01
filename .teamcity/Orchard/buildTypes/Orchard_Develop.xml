@@ -3,6 +3,9 @@
   <name>Orchard_Develop</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_5" />
+    </disabled-settings>
     <parameters>
       <param name="Configuration" value="Debug" />
     </parameters>
