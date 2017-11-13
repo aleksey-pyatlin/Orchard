@@ -30,13 +30,6 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_1" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_5" name="Build" type="VS.Solution">
         <parameters>
           <param name="build-file-path" value="src/Orchard.sln" />
@@ -73,9 +66,9 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_2" name="Run Sonar Analysis and Push Results to Server" type="simpleRunner">
+      <runner id="RUNNER_1" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
+          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
@@ -100,6 +93,13 @@
           <param name="targets" value="Rebuild" />
           <param name="teamcity.step.mode" value="default" />
           <param name="toolsVersion" value="15.0" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="Run Sonar Analysis and Push Results to Server" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
