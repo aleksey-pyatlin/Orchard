@@ -3,6 +3,9 @@
   <name>Orchard_Metrics</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_13" />
+    </disabled-settings>
     <parameters>
       <param name="Configuration" value="Debug" />
       <param name="Sonar.Password" value="zxxffba564fae40f940775d03cbe80d301b" spec="password display='hidden'" />
