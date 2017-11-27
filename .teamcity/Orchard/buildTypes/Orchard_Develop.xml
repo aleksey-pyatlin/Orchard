@@ -66,10 +66,11 @@
     <build-extensions>
       <extension id="BUILD_EXT_1" type="commit-status-publisher">
         <parameters>
-          <param name="github_authentication_type" value="password" />
+          <param name="github_authentication_type" value="token" />
           <param name="github_host" value="https://api.github.com" />
           <param name="github_username" value="aleksey-pyatlin" />
           <param name="publisherId" value="githubStatusPublisher" />
+          <param name="secure:github_access_token" value="zxx5237ed1d5ddd9778568f31b2e678d78c03a8eaede92d82f16ffebea53323c001d19456e0eed0717a775d03cbe80d301b" />
           <param name="secure:github_password" value="zxxa70075bc751d9d27eca19f64cb355703" />
         </parameters>
       </extension>
