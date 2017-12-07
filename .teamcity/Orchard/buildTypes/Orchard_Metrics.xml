@@ -67,7 +67,7 @@
       </runner>
       <runner id="RUNNER_1" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
+          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password% /d:sonar.cs.dotcover.reportsPaths=&quot;%teamcity.build.workingDir%/.teamcity/.NETCoverage/CoverageReport.xml&quot;" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
