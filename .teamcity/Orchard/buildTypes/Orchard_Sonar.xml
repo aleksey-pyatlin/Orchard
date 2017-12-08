@@ -3,7 +3,9 @@
   <name>Sonar</name>
   <description>Runs Sonar Analysis on Orchard.Core</description>
   <settings>
-    <parameters />
+    <parameters>
+      <param name="Sonar.Password" value="zxxffba564fae40f940775d03cbe80d301b" spec="password display='hidden'" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_7" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
         <parameters>
