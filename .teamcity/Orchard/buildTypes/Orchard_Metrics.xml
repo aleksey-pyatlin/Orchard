@@ -111,9 +111,12 @@
         <parameters>
           <param name="jetbrains_powershell_execution" value="PS1" />
           <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code"><![CDATA[Write-Output "debug info"
-Write-Output "%system.teamcity.build.tempDir%"]]></param>
+          <param name="jetbrains_powershell_script_code"><![CDATA[$reportFile = @(gci -file -fi dotCover*Report | select -f 1)
+if (Test-Path $reportFile.Name) {
+    cp $reportFile "coverageReport.xml"
+}]]></param>
           <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.build.workingDir" value="%system.teamcity.build.tempDir%" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
