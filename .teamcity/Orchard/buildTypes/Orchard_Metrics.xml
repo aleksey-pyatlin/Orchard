@@ -8,7 +8,6 @@
     </disabled-settings>
     <parameters>
       <param name="Configuration" value="Debug" />
-      <param name="Sonar.Password" value="zxxffba564fae40f940775d03cbe80d301b" spec="password display='hidden'" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_15" name="Restore packages" type="simpleRunner">
