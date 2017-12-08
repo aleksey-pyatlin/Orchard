@@ -7,6 +7,13 @@
       <param name="Sonar.Password" value="zxxffba564fae40f940775d03cbe80d301b" spec="password display='hidden'" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_10" name="Obtain dotCover HTML report" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="%teamcity.dotCover.home%\dotCover.exe report /ReportType=HTML /Source=&quot;dotCover.dcvr&quot; /Output=&quot;dotCover.html&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_7" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
         <parameters>
           <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password% /d:sonar.cs.dotcover.reportsPaths=&quot;dotCover.html&quot;" />
@@ -39,13 +46,6 @@
       <runner id="RUNNER_9" name="Run Sonar Analysis and Push Results to Server" type="simpleRunner">
         <parameters>
           <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_10" name="Obtain dotCover HTML report" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="%teamcity.dotCover.home%\dotCover.exe report /ReportType=HTML /Source=&quot;dotCover.dcvr&quot; /Output=&quot;dotCover.html&quot;" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
