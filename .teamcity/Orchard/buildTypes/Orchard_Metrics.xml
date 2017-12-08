@@ -56,8 +56,6 @@
           <param name="dotNetCoverage.PartCover.includes" value="[*]*" />
           <param name="dotNetCoverage.PartCover.platformBitness" value="x86" />
           <param name="dotNetCoverage.PartCover.platformVersion" value="v2.0" />
-          <param name="dotNetCoverage.dotCover.customCmd"><![CDATA[/Output="CoverageReport.xml"
-/ReportType="XML"]]></param>
           <param name="dotNetCoverage.dotCover.filters" value="-:*Tests*" />
           <param name="dotNetCoverage.dotCover.home.path" value="%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%" />
           <param name="dotNetCoverage.tool" value="dotcover" />
