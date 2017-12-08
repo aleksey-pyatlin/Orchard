@@ -43,6 +43,13 @@
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_10" name="Obtain dotCover HTML report" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="%teamcity.dotCover.home%\dotCover.exe report /ReportType=HTML /Source=&quot;dotCover.dcvr&quot; /Output=&quot;dotCover.html&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Orchard_Develop" />
