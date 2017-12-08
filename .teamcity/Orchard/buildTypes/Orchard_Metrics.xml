@@ -69,11 +69,11 @@
         <parameters>
           <param name="jetbrains_powershell_execution" value="PS1" />
           <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code"><![CDATA[Write-Out "Strat finding file"
+          <param name="jetbrains_powershell_script_code"><![CDATA[Write-Output "Strat finding file"
 $reportFile = @(gci -file -fi dotCover*Report | select -f 1)
-Write-Out "Finding file finished"
-Write-Out $reportFile.Name
-Write-Out "Testing file exists"
+Write-Output "Finding file finished"
+Write-Output $reportFile.Name
+Write-Output "Testing file exists"
 if (Test-Path $reportFile.Name) {
     cp $reportFile "coverageReport.xml"
 }]]></param>
