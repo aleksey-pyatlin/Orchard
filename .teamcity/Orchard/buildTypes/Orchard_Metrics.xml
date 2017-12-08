@@ -5,7 +5,6 @@
   <settings>
     <disabled-settings>
       <setting-ref ref="RUNNER_13" />
-      <setting-ref ref="RUNNER_2" />
     </disabled-settings>
     <parameters>
       <param name="Configuration" value="Debug" />
@@ -64,13 +63,6 @@
           <param name="nunit_platform" value="MSIL" />
           <param name="nunit_version" value="NUnit-2.5.10" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_2" name="Run Sonar Analysis and Push Results to Server" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
