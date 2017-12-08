@@ -75,7 +75,7 @@ Write-Output "Strat finding file"
 $reportFile = @(gci -file -fi dotCover*Report | select -f 1)
 Write-Output "Finding file finished"
 Write-Output "Testing file exists"
-if ($reportFile.Name -and Test-Path $reportFile.Name) {
+if ($reportFile.Name -and @(Test-Path $reportFile.Name)) {
     cp $reportFile "coverageReport.xml"
 }
 else {
