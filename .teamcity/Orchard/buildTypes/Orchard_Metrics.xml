@@ -4,7 +4,6 @@
   <description />
   <settings>
     <disabled-settings>
-      <setting-ref ref="RUNNER_1" />
       <setting-ref ref="RUNNER_13" />
       <setting-ref ref="RUNNER_2" />
       <setting-ref ref="RUNNER_3" />
@@ -66,13 +65,6 @@
           <param name="nunit_platform" value="MSIL" />
           <param name="nunit_version" value="NUnit-2.5.10" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_1" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password% /d:sonar.cs.dotcover.reportsPaths=&quot;%system.teamcity.build.tempDir%\coverageReport.xml&quot;" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
       <runner id="RUNNER_3" name="Build Core Project" type="MSBuild">
