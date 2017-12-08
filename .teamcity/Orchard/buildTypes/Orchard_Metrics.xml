@@ -5,6 +5,7 @@
   <settings>
     <disabled-settings>
       <setting-ref ref="RUNNER_13" />
+      <setting-ref ref="RUNNER_15" />
     </disabled-settings>
     <parameters>
       <param name="Configuration" value="Debug" />
