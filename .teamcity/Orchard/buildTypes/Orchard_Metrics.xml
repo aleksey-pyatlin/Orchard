@@ -69,13 +69,18 @@
         <parameters>
           <param name="jetbrains_powershell_execution" value="PS1" />
           <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code"><![CDATA[Write-Output "Strat finding file"
+          <param name="jetbrains_powershell_script_code"><![CDATA[Write-Output "Files list"
+Get-ChildItem -Path .
+Write-Output "Strat finding file"
 $reportFile = @(gci -file -fi dotCover*Report | select -f 1)
 Write-Output "Finding file finished"
-Write-Output $reportFile.Name
 Write-Output "Testing file exists"
-if (Test-Path $reportFile.Name) {
+if ($reportFile.Name -and Test-Path $reportFile.Name) {
     cp $reportFile "coverageReport.xml"
+}
+else {
+    Write-Output "File does not exist"
+return 1;
 }]]></param>
           <param name="jetbrains_powershell_script_mode" value="CODE" />
           <param name="teamcity.build.workingDir" value="%system.teamcity.build.tempDir%" />
