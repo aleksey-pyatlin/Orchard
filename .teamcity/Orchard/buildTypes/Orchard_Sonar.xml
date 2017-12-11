@@ -3,6 +3,9 @@
   <name>Sonar</name>
   <description>Runs Sonar Analysis on Orchard.Core</description>
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_10" />
+    </disabled-settings>
     <parameters>
       <param name="Sonar.Password" value="zxxffba564fae40f940775d03cbe80d301b" spec="password display='hidden'" />
     </parameters>
