@@ -60,20 +60,6 @@ if (Test-Path "TestResult.xml") {
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_6" name="Check Test Result file exist" type="jetbrains_powershell">
-        <parameters>
-          <param name="jetbrains_powershell_execution" value="PS1" />
-          <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code"><![CDATA[if (Test-Path "TestResult.xml") {
-  Write-Output "TestResult.xml Exitsts"
-}
-else {
-  Write-Output "TestResult.xml Does not Exist"
-}]]></param>
-          <param name="jetbrains_powershell_script_mode" value="CODE" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_7" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
         <parameters>
           <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password% /d:sonar.cs.dotcover.reportsPaths=&quot;CoverageReport.html&quot; /d:sonar.cs.nunit.reportsPaths=&quot;TestResult.xml&quot;" />
