@@ -62,14 +62,6 @@
         <artifact sourcePath="+:.teamcity/.NETCoverage/CoverageReport.xml&#xD;&#xA;+:.teamcity/.NETCoverage/dotCover.dcvr" />
       </dependency>
     </artifact-dependencies>
-    <dependencies>
-      <depend-on sourceBuildTypeId="Orchard_Metrics">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
     <cleanup />
   </settings>
 </build-type>
