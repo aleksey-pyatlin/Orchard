@@ -3,9 +3,6 @@
   <name>Sonar</name>
   <description>Runs Sonar Analysis on Orchard.Core</description>
   <settings>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_10" />
-    </disabled-settings>
     <parameters>
       <param name="Configuration" value="Debug" />
       <param name="Sonar.Password" value="zxxffba564fae40f940775d03cbe80d301b" spec="password display='hidden'" />
@@ -28,13 +25,6 @@
           <param name="teamcity.step.mode" value="default" />
           <param name="toolsVersion" value="15.0" />
           <param name="vs.version" value="vs2017" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_10" name="Obtain dotCover HTML report" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="%teamcity.dotCover.home%\dotCover.exe report /ReportType=HTML /Source=&quot;dotCover.dcvr&quot; /Output=&quot;dotCover.html&quot;" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
       <runner id="RUNNER_3" name="Run All Tests With Coverage" type="jetbrains_powershell">
