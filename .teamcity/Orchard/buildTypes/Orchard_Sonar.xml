@@ -8,7 +8,7 @@
       <param name="Sonar.Password" value="zxxffba564fae40f940775d03cbe80d301b" spec="password display='hidden'" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_1" name="" type="simpleRunner">
+      <runner id="RUNNER_1" name="Restore Packages" type="simpleRunner">
         <parameters>
           <param name="script.content" value="call nuget restore src\Orchard.sln -Source &quot;https://api.nuget.org/v3/index.json&quot;" />
           <param name="teamcity.step.mode" value="default" />
