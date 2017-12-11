@@ -4,7 +4,6 @@
   <description />
   <settings>
     <disabled-settings>
-      <setting-ref ref="RUNNER_11" />
       <setting-ref ref="RUNNER_12" />
       <setting-ref ref="RUNNER_13" />
     </disabled-settings>
@@ -63,29 +62,6 @@
           <param name="nunit_include" value="/src/Orchard.Core.Tests/bin/%Configuration%/Orchard.Core.Tests.dll" />
           <param name="nunit_platform" value="MSIL" />
           <param name="nunit_version" value="NUnit-2.5.10" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_11" name="Run All Tests With Coverage (manual run)" type="jetbrains_powershell">
-        <parameters>
-          <param name="jetbrains_powershell_execution" value="PS1" />
-          <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code"><![CDATA[# Only these runners work in Docker container
-nuget install NUnit.Runners -Version 2.6.1 -OutputDirectory ./src/packages
-
-# Clean previous run files
-if (Test-Path "CoverageReport.html") {
-  Write-Output "Clearing old CoverageReport.html"
-  rm "CoverageReport.html"
-}
-if (Test-Path "TestReport.xml") {
-  Write-Output "Clearing old TestReport.xml"
-  rm "TestReport.xml"
-}
-
-# Run tests
-%teamcity.dotCover.home%\dotCover.exe analyse /Filters="-:module=*Tests*;" /TargetExecutable=".\src\packages\NUnit.Runners.2.6.1\tools\nunit-console.exe" /TargetArguments=".\src\Orchard.Core.Tests\bin\%Configuration%\Orchard.Core.Tests.dll /out:TestReport.xml" /Output="CoverageReport.html" /ReportType="HTML"]]></param>
-          <param name="jetbrains_powershell_script_mode" value="CODE" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
