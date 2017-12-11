@@ -36,6 +36,29 @@
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_3" name="Run All Tests With Coverage" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_script_code"><![CDATA[# Only these runners work in Docker container
+nuget install NUnit.Runners -Version 2.6.1 -OutputDirectory ./src/packages
+
+# Clean previous run files
+if (Test-Path "CoverageReport.html") {
+  Write-Output "Clearing old CoverageReport.html"
+  rm "CoverageReport.html"
+}
+if (Test-Path "TestReport.xml") {
+  Write-Output "Clearing old TestReport.xml"
+  rm "TestReport.xml"
+}
+
+# Run tests
+%teamcity.dotCover.home%\dotCover.exe analyse /Filters="-:module=*Tests*;" /TargetExecutable=".\src\packages\NUnit.Runners.2.6.1\tools\nunit-console.exe" /TargetArguments=".\src\Orchard.Core.Tests\bin\%Configuration%\Orchard.Core.Tests.dll /out:TestReport.xml" /Output="CoverageReport.html" /ReportType="HTML"]]></param>
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_7" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
         <parameters>
           <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; begin /k:&quot;Orchard.Core&quot; /n:&quot;Orchard Core Project&quot; /v:&quot;1.0&quot; /d:sonar.host.url=&quot;http://sonardocker:9000&quot; /d:sonar.login=admin /d:sonar.password=%Sonar.Password% /d:sonar.cs.dotcover.reportsPaths=&quot;dotCover.html&quot;" />
@@ -70,29 +93,6 @@
           <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_3" name="Run All Tests With Coverage" type="jetbrains_powershell">
-        <parameters>
-          <param name="jetbrains_powershell_execution" value="PS1" />
-          <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code"><![CDATA[# Only these runners work in Docker container
-nuget install NUnit.Runners -Version 2.6.1 -OutputDirectory ./src/packages
-
-# Clean previous run files
-if (Test-Path "CoverageReport.html") {
-  Write-Output "Clearing old CoverageReport.html"
-  rm "CoverageReport.html"
-}
-if (Test-Path "TestReport.xml") {
-  Write-Output "Clearing old TestReport.xml"
-  rm "TestReport.xml"
-}
-
-# Run tests
-%teamcity.dotCover.home%\dotCover.exe analyse /Filters="-:module=*Tests*;" /TargetExecutable=".\src\packages\NUnit.Runners.2.6.1\tools\nunit-console.exe" /TargetArguments=".\src\Orchard.Core.Tests\bin\%Configuration%\Orchard.Core.Tests.dll /out:TestReport.xml" /Output="CoverageReport.html" /ReportType="HTML"]]></param>
-          <param name="jetbrains_powershell_script_mode" value="CODE" />
-          <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
     </build-runners>
