@@ -14,6 +14,18 @@
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_2" name="Build Solution" type="VS.Solution">
+        <parameters>
+          <param name="build-file-path" value="src/Orchard.sln" />
+          <param name="msbuild_version" value="15.0" />
+          <param name="run-platform" value="x86" />
+          <param name="runnerArgs" value="/p:StaticAnalysisEnabled=true" />
+          <param name="targets" value="Rebuild" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="toolsVersion" value="15.0" />
+          <param name="vs.version" value="vs2017" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_10" name="Obtain dotCover HTML report" type="simpleRunner">
         <parameters>
           <param name="script.content" value="%teamcity.dotCover.home%\dotCover.exe report /ReportType=HTML /Source=&quot;dotCover.dcvr&quot; /Output=&quot;dotCover.html&quot;" />
@@ -55,18 +67,6 @@
           <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_2" name="Build Solution" type="VS.Solution">
-        <parameters>
-          <param name="build-file-path" value="src/Orchard.sln" />
-          <param name="msbuild_version" value="15.0" />
-          <param name="run-platform" value="x86" />
-          <param name="runnerArgs" value="/p:StaticAnalysisEnabled=true" />
-          <param name="targets" value="Rebuild" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="toolsVersion" value="15.0" />
-          <param name="vs.version" value="vs2017" />
         </parameters>
       </runner>
     </build-runners>
