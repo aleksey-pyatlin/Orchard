@@ -56,12 +56,6 @@
     </vcs-settings>
     <requirements />
     <build-triggers />
-    <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="Orchard_Metrics" cleanDestination="false">
-        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:.teamcity/.NETCoverage/CoverageReport.xml&#xD;&#xA;+:.teamcity/.NETCoverage/dotCover.dcvr" />
-      </dependency>
-    </artifact-dependencies>
     <cleanup />
   </settings>
 </build-type>
