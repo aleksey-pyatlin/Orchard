@@ -41,7 +41,7 @@ if (Test-Path "CoverageReport.html") {
 }
 if (Test-Path "TestResult.xml") {
   Write-Output "Clearing old TestResult.xml"
-  rm "TestReport.xml"
+  rm "TestResult.xml"
 }
 
 # Run tests
