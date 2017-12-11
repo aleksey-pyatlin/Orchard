@@ -83,7 +83,7 @@ if (Test-Path "TestReport.xml") {
 }
 
 # Run tests
-%teamcity.dotCover.home%\dotCover.exe analyse /Filters="-:module=*Tests*;" /TargetExecutable=".\src\packages\NUnit.Runners.2.6.1\tools\nunit-console.exe" /TargetArguments="/src/Orchard.Core.Tests/bin/%Configuration%/Orchard.Core.Tests.dll /out:TestReport.xml" /Output="CoverageReport.html" /ReportType="HTML"]]></param>
+%teamcity.dotCover.home%\dotCover.exe analyse /Filters="-:module=*Tests*;" /TargetExecutable=".\src\packages\NUnit.Runners.2.6.1\tools\nunit-console.exe" /TargetArguments=".\src\Orchard.Core.Tests\bin\%Configuration%\Orchard.Core.Tests.dll /out:TestReport.xml" /Output="CoverageReport.html" /ReportType="HTML"]]></param>
           <param name="jetbrains_powershell_script_mode" value="CODE" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
