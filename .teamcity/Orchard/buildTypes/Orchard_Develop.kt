@@ -26,7 +26,11 @@ object Orchard_Develop : BuildType({
     steps {
         script {
             name = "Restore packages"
-            scriptContent = """call nuget restore src\Orchard.sln -Source "https://api.nuget.org/v3/index.json""""
+            scriptContent = """
+                echo "test"
+                
+                call nuget restore src\Orchard.sln -Source "https://api.nuget.org/v3/index.json"
+            """.trimIndent()
         }
         visualStudio {
             name = "Build"

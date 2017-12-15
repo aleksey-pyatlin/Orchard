@@ -24,7 +24,7 @@ object Project : Project({
         versionedSettings {
             id = "PROJECT_EXT_2"
             mode = VersionedSettings.Mode.ENABLED
-            buildSettingsMode = VersionedSettings.BuildSettingsMode.USE_CURRENT_SETTINGS
+            buildSettingsMode = VersionedSettings.BuildSettingsMode.PREFER_SETTINGS_FROM_VCS
             rootExtId = Vcs_Orchard_Develop.id
             showChanges = false
             settingsFormat = VersionedSettings.Format.KOTLIN
