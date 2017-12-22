@@ -57,6 +57,10 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
             includeTests = "/src/Orchard.Core.Tests/bin/%Configuration%/Orchard.Core.Tests.dll"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
+        script {
+            name = "Deploy"
+            scriptContent = "deploy.cmd"
+        }
     }
 
     triggers {
