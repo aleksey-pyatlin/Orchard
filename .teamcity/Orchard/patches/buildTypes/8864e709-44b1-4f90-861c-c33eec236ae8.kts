@@ -57,7 +57,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
         }
         msBuild {
             name = "Precompile"
-            enabled = false
             path = "Orchard.proj"
             version = MSBuildStep.MSBuildVersion.V12_0
             toolsVersion = MSBuildStep.MSBuildToolsVersion.V4_0
