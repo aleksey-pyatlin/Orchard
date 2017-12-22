@@ -33,7 +33,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     steps {
         script {
             name = "Restore packages"
-            enabled = false
             scriptContent = """
                 echo "test"
                 
@@ -42,7 +41,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
         }
         visualStudio {
             name = "Build"
-            enabled = false
             path = "src/Orchard.sln"
             version = VisualStudioStep.VisualStudioVersion.vs2015
             runPlatform = VisualStudioStep.Platform.x86
