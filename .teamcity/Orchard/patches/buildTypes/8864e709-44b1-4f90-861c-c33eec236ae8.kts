@@ -75,6 +75,10 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
                 deploy.cmd
             """.trimIndent()
         }
+        script {
+            name = "Install soft"
+            scriptContent = "choco install microsoft-build-tools-2013"
+        }
     }
 
     triggers {
