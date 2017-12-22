@@ -50,6 +50,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
         }
         nunit {
             name = "Run Tests"
+            enabled = false
             nunitVersion = NUnitStep.NUnitVersion.NUnit_2_5_10
             runtimeVersion = NUnitStep.RuntimeVersion.v4_0
             includeTests = "/src/Orchard.Core.Tests/bin/%Configuration%/Orchard.Core.Tests.dll"
