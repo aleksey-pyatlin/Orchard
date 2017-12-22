@@ -25,6 +25,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
 
     params {
         param("Configuration", "Debug")
+        param("MSBuildTools12.0_x86_Path", "")
     }
 
     vcs {
