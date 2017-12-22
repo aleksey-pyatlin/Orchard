@@ -60,7 +60,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
         script {
             name = "Deploy"
             scriptContent = """
-                move "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0\*" "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0"
+                move "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0\*" "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0"
                 dir "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0"
                 deploy.cmd
             """.trimIndent()
