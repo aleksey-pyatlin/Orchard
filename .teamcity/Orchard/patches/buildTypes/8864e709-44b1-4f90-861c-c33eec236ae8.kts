@@ -35,6 +35,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     steps {
         script {
             name = "Install soft"
+            enabled = false
             scriptContent = "choco install microsoft-build-tools-2013"
         }
         script {
