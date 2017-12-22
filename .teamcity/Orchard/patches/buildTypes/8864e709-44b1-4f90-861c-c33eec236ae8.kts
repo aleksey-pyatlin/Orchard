@@ -33,6 +33,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     steps {
         script {
             name = "Restore packages"
+            enabled = false
             scriptContent = """
                 echo "test"
                 
