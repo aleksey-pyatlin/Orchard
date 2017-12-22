@@ -46,7 +46,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
             runPlatform = VisualStudioStep.Platform.x86
             msBuildVersion = VisualStudioStep.MSBuildVersion.V14_0
             msBuildToolsVersion = VisualStudioStep.MSBuildToolsVersion.V14_0
-            args = "/p:StaticAnalysisEnabled=true"
         }
         nunit {
             name = "Run Tests"
