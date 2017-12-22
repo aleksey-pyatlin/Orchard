@@ -19,7 +19,7 @@ in the project with uuid = 'c58659de-f5ce-44b2-ab74-0aaa2149b179' and delete the
 create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     uuid = "8864e709-44b1-4f90-861c-c33eec236ae8"
     id = "Orchard_Publish"
-    name = "Sample_Publish"
+    name = "Orchard_Publish"
 
     params {
         param("Configuration", "Debug")
