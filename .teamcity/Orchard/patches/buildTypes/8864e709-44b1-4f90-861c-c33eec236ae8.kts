@@ -34,6 +34,10 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
 
     steps {
         script {
+            name = "Install soft"
+            scriptContent = "choco install microsoft-build-tools-2013"
+        }
+        script {
             name = "Restore packages"
             scriptContent = """
                 echo "test"
@@ -74,10 +78,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
                 dir "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0"
                 deploy.cmd
             """.trimIndent()
-        }
-        script {
-            name = "Install soft"
-            scriptContent = "choco install microsoft-build-tools-2013"
         }
     }
 
