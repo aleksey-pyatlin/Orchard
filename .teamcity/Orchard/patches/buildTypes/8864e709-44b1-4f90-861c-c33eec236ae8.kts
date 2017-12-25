@@ -2,7 +2,9 @@ package Orchard.patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.MSBuildStep
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.VisualStudioStep
+import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.msBuild
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.visualStudio
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
@@ -44,6 +46,14 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
             msBuildVersion = VisualStudioStep.MSBuildVersion.V14_0
             msBuildToolsVersion = VisualStudioStep.MSBuildToolsVersion.V14_0
             configuration = "%build_configuration%"
+        }
+        msBuild {
+            name = "Deploy project"
+            path = """Aura.Supersite.WebHost\Aura.Supersite.WebHost.csproj"""
+            version = MSBuildStep.MSBuildVersion.V14_0
+            toolsVersion = MSBuildStep.MSBuildToolsVersion.V14_0
+            args = "/p:DeployOnBuild=true /p:PublishProfile=%publish_profile%.pubxml  /p:Password=%msdeploy_pass% /p:Configuration=%build_configuration% /p:AllowUntrustedCertificate=true"
+            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
 
