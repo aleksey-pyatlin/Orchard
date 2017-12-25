@@ -26,6 +26,10 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
             name = "Copy connection strings config from template"
             scriptContent = """copy Aura.Supersite.WebHost\Connections.config.local.template Aura.Supersite.WebHost\Connections.config.local /Y"""
         }
+        script {
+            name = "Restore nuget packages and dependencies"
+            scriptContent = """call "nuget.exe" restore "%system.teamcity.build.workingDir%\Aura.Supersite.sln""""
+        }
     }
 
     triggers {
