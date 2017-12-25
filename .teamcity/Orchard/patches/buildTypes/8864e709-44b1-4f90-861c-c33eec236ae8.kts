@@ -15,10 +15,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     id = "Orchard_Publish"
     name = "Supersite_Publish"
 
-    params {
-        param("Configuration", "Debug")
-    }
-
     vcs {
         root("Orchard_Develop")
 
