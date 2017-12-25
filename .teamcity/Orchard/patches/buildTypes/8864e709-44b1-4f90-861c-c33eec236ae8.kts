@@ -5,11 +5,9 @@ import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.MSBuildStep
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.NUnitStep
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.VisualStudioStep
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.msBuild
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.nunit
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.visualStudio
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
 
@@ -33,23 +31,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     }
 
     steps {
-        script {
-            name = "Restore packages"
-            scriptContent = """
-                echo "test"
-                
-                call nuget restore src\Orchard.sln -Source "https://api.nuget.org/v3/index.json"
-            """.trimIndent()
-        }
-        visualStudio {
-            name = "Build"
-            enabled = false
-            path = "src/Orchard.sln"
-            version = VisualStudioStep.VisualStudioVersion.vs2015
-            runPlatform = VisualStudioStep.Platform.x86
-            msBuildVersion = VisualStudioStep.MSBuildVersion.V14_0
-            msBuildToolsVersion = VisualStudioStep.MSBuildToolsVersion.V14_0
-        }
         msBuild {
             name = "Precompile"
             path = "Orchard.proj"
