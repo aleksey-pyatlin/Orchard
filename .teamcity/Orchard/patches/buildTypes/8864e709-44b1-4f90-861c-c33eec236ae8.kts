@@ -3,10 +3,6 @@ package Orchard.patches.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.MSBuildStep
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.NUnitStep
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.msBuild
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.nunit
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
@@ -31,23 +27,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     }
 
     steps {
-        msBuild {
-            name = "Precompile"
-            path = "Orchard.proj"
-            version = MSBuildStep.MSBuildVersion.V12_0
-            toolsVersion = MSBuildStep.MSBuildToolsVersion.V4_0
-            targets = "Precompiled"
-            args = "/v:m /m"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
-        }
-        nunit {
-            name = "Run Tests"
-            enabled = false
-            nunitVersion = NUnitStep.NUnitVersion.NUnit_2_5_10
-            runtimeVersion = NUnitStep.RuntimeVersion.v4_0
-            includeTests = "/src/Orchard.Core.Tests/bin/%Configuration%/Orchard.Core.Tests.dll"
-            param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
-        }
         script {
             name = "Deploy"
             enabled = false
