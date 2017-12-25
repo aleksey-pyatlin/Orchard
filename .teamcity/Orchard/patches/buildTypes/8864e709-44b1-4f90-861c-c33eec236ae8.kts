@@ -3,7 +3,6 @@ package Orchard.patches.buildTypes
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
 import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
 
@@ -24,17 +23,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     vcs {
         root("Orchard_Develop")
 
-    }
-
-    steps {
-        script {
-            name = "Deploy"
-            enabled = false
-            scriptContent = """
-                dir "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0"
-                deploy.cmd
-            """.trimIndent()
-        }
     }
 
     triggers {
