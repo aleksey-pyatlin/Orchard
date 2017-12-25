@@ -2,7 +2,6 @@ package Orchard.patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
-import jetbrains.buildServer.configs.kotlin.v2017_2.buildFeatures.commitStatusPublisher
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
 
@@ -27,19 +26,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
 
     triggers {
         vcs {
-        }
-    }
-
-    features {
-        commitStatusPublisher {
-            publisher = github {
-                githubUrl = "https://api.github.com"
-                authType = personalToken {
-                    token = "zxx5237ed1d5ddd9778568f31b2e678d78c03a8eaede92d82f16ffebea53323c001d19456e0eed0717a775d03cbe80d301b"
-                }
-            }
-            param("secure:github_password", "zxxa70075bc751d9d27eca19f64cb355703")
-            param("github_username", "aleksey-pyatlin")
         }
     }
 }))
