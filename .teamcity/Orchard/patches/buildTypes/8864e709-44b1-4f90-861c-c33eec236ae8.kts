@@ -2,6 +2,7 @@ package Orchard.patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2017_2.*
 import jetbrains.buildServer.configs.kotlin.v2017_2.BuildType
+import jetbrains.buildServer.configs.kotlin.v2017_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2017_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2017_2.ui.*
 
@@ -18,6 +19,13 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
     vcs {
         root("Supersite_CD_RND")
 
+    }
+
+    steps {
+        script {
+            name = "Copy connection strings config from template"
+            scriptContent = """copy Aura.Supersite.WebHost\Connections.config.local.template Aura.Supersite.WebHost\Connections.config.local /Y"""
+        }
     }
 
     triggers {
