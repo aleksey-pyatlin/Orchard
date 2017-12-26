@@ -33,6 +33,10 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
 
     steps {
         script {
+            name = "Ping"
+            scriptContent = "ping dotnetdocker"
+        }
+        script {
             name = "Copy connection strings config from template"
             scriptContent = """copy Aura.Supersite.WebHost\Connections.config.local.template Aura.Supersite.WebHost\Connections.config.local /Y"""
         }
@@ -56,10 +60,6 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
             toolsVersion = MSBuildStep.MSBuildToolsVersion.V14_0
             args = "/p:DeployOnBuild=true /p:PublishProfile=%publish_profile%.pubxml  /p:Password=%msdeploy_pass% /p:Configuration=%build_configuration% /p:AllowUntrustedCertificate=true"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
-        }
-        script {
-            name = "Ping"
-            scriptContent = "ping dotnetdocker"
         }
     }
 
