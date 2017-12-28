@@ -22,7 +22,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
 
     params {
         param("build_configuration", "Release")
-        password("msdeploy_pass", "zxx7ee5000919d27733775d03cbe80d301b")
+        password("msdeploy_pass", "zxx8fd3f4429995dea0974540f67ef6313a")
         param("publish_profile", "DemoHosterDocker")
     }
 
