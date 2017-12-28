@@ -58,7 +58,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", BuildType({
             path = """Aura.Supersite.WebHost\Aura.Supersite.WebHost.csproj"""
             version = MSBuildStep.MSBuildVersion.V14_0
             toolsVersion = MSBuildStep.MSBuildToolsVersion.V14_0
-            args = "/p:DeployOnBuild=true /p:PublishProfile=%publish_profile%.pubxml  /p:Password=%msdeploy_pass% /p:Configuration=%build_configuration% /p:AllowUntrustedCertificate=true"
+            args = "/p:DeployOnBuild=true /p:PublishProfile=%publish_profile%.pubxml  /p:Configuration=%build_configuration% /p:AllowUntrustedCertificate=true"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
         }
     }
