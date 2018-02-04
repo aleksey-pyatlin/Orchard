@@ -17,7 +17,7 @@ create("c58659de-f5ce-44b2-ab74-0aaa2149b179", GitVcsRoot({
     branch = "refs/heads/cd-rnd"
     authMethod = password {
         userName = "a.pyatlin"
-        password = "zxxe244f4bb52c62546b45f46eaac1bc2a0"
+        password = "zxxb4f01674e9f623a9b45f46eaac1bc2a0"
     }
 }))
 
