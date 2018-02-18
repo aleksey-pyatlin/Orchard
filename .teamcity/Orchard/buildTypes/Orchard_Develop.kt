@@ -60,10 +60,10 @@ object Orchard_Develop : BuildType({
             publisher = github {
                 githubUrl = "https://api.github.com"
                 authType = personalToken {
-                    token = "zxx5237ed1d5ddd9778568f31b2e678d78c03a8eaede92d82f16ffebea53323c001d19456e0eed0717a775d03cbe80d301b"
+                    token = "credentialsJSON:090a7323-9489-4ea4-86df-ed0b7f5359d0"
                 }
             }
-            param("secure:github_password", "zxxa70075bc751d9d27eca19f64cb355703")
+            param("secure:github_password", "credentialsJSON:ae881455-bf29-499f-ae3b-c3e69e87f6c9")
             param("github_username", "aleksey-pyatlin")
         }
     }

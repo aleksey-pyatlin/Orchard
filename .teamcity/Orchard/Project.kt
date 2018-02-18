@@ -14,8 +14,10 @@ object Project : Project({
     parentId = "_Root"
     name = "Orchard"
 
+    vcsRoot(Supersite_CD_RND)
     vcsRoot(Vcs_Orchard_Develop)
 
+    buildType(Orchard_Publish)
     buildType(Orchard_Metrics)
     buildType(Orchard_Sonar)
     buildType(Orchard_Develop)
@@ -28,6 +30,7 @@ object Project : Project({
             rootExtId = Vcs_Orchard_Develop.id
             showChanges = false
             settingsFormat = VersionedSettings.Format.KOTLIN
+            storeSecureParamsOutsideOfVcs = true
         }
     }
 })

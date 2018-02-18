@@ -16,7 +16,8 @@ object Orchard_Sonar : BuildType({
 
     params {
         param("Configuration", "Debug")
-        password("Sonar.Password", "zxxffba564fae40f940775d03cbe80d301b", display = ParameterDisplay.HIDDEN)
+        password("Sonar.Password", "credentialsJSON:995b1d5c-1804-41d0-800d-f12f59938160", display = ParameterDisplay.HIDDEN)
+        param("teamcity.dotCover.home", """C:\teamcity_agent\tools\JetBrains.dotCover.CommandLineTools.bundled""")
     }
 
     vcs {
@@ -56,7 +57,7 @@ object Orchard_Sonar : BuildType({
                     }
                     
                     # Run tests
-                    %teamcity.dotCover.home%\dotCover.exe analyse /Filters="-:module=*Tests*;" /TargetExecutable=".\src\packages\NUnit.Runners.2.6.1\tools\nunit-console.exe" /TargetArguments=".\src\Orchard.Core.Tests\bin\%Configuration%\Orchard.Core.Tests.dll" /Output="CoverageReport.html" /ReportType="HTML"
+                    %teamcity.dotCover.home%\dotCover.exe analyse /Filters="-:module=*Tests*;" /TargetExecutable=".\src\packages\NUnit.Runners.2.6.1\tools\nunit-console.exe" /TargetArguments=".\src\Orchard.Core.Tests\bin\%Configuration%\Orchard.Core.Tests.dll" /TargetWorkingDir=. /Output="CoverageReport.html" /ReportType="HTML"
                 """.trimIndent()
             }
         }
