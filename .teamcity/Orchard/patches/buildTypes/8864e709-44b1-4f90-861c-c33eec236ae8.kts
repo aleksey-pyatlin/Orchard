@@ -12,5 +12,5 @@ changeBuildType("8864e709-44b1-4f90-861c-c33eec236ae8") {
     check(name == "Supersite_Publish") {
         "Unexpected name: '$name'"
     }
-    name = "Deploy_Demohoster_Self_Contained"
+    name = "Deploy_Demohoster_Self-Contained"
 }
