@@ -13,4 +13,8 @@ changeBuildType("8864e709-44b1-4f90-861c-c33eec236ae8") {
         "Unexpected name: '$name'"
     }
     name = "Deploy_Demohoster_Self-Contained"
+
+    vcs {
+        remove("Supersite_CD_RND")
+    }
 }
