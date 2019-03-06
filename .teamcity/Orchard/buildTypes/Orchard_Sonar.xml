@@ -5,7 +5,7 @@
   <settings>
     <parameters>
       <param name="Configuration" value="Debug" />
-      <param name="Sonar.Login" value="admin" />
+      <param name="Sonar.Login" value="dotnetdocker" />
       <param name="Sonar.Password" value="credentialsJSON:5dd3970c-87b8-4464-aadb-8fa269651093" spec="password display='normal'" />
       <param name="teamcity.dotCover.home" value="C:\teamcity_agent\tools\JetBrains.dotCover.CommandLineTools.bundled" />
     </parameters>
