@@ -10,6 +10,13 @@
       <param name="teamcity.dotCover.home" value="C:\teamcity_agent\tools\JetBrains.dotCover.CommandLineTools.bundled" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_7" name="Dump Info" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="dir &quot;c:\Program Files\SonarQube\bin&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_1" name="Restore Packages" type="simpleRunner">
         <parameters>
           <param name="script.content" value="call nuget restore src\Orchard.sln -Source &quot;https://api.nuget.org/v3/index.json&quot;" />
@@ -88,13 +95,6 @@ if (Test-Path "TestResult.xml") {
       <runner id="RUNNER_6" name="Run Sonar Analysis and Push Results to Server" type="simpleRunner">
         <parameters>
           <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarScanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_7" name="Dump Info" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="dir &quot;c:\Program Files\SonarQube\bin&quot;" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
