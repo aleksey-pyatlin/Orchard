@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="692dbf0d-a01b-42c1-a9f7-3aadb27e854e" type="jetbrains.git" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/2018.1/project-config.xsd">
+  <name>Orchard_Develop</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="credentialsJSON:23c593ed-19a0-45e6-afb6-1a5de7ddbe34" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/*
++:refs/pull/*/head
++:refs/pull/(*/merge)]]></param>
+  <param name="url" value="https://github.com/aleksey-pyatlin/Orchard.git" />
+  <param name="useAlternates" value="true" />
+  <param name="username" value="aleksey-pyatlin" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+
