@@ -62,7 +62,7 @@ if (Test-Path "TestResult.xml") {
       <runner id="RUNNER_4" name="Initialize Sonar MSBuild Analysis" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[dir "c:\Program Files\SonarQube\bin"
-"c:\Program Files\SonarQube\bin\SonarScanner.MSBuild.exe" begin /k:"Orchard.Core" /n:"Orchard Core Project" /v:"1.0" /d:sonar.host.url="http://sonardocker:9000" /d:sonar.login=%Sonar.Login% /d:sonar.password=%Sonar.Password% /d:sonar.cs.dotcover.reportsPaths="CoverageReport.html" /d:sonar.cs.nunit.reportsPaths="TestResult.xml"]]></param>
+"c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe" begin /k:"Orchard.Core" /n:"Orchard Core Project" /v:"1.0" /d:sonar.host.url="http://sonardocker:9000" /d:sonar.login=%Sonar.Login% /d:sonar.password=%Sonar.Password% /d:sonar.cs.dotcover.reportsPaths="CoverageReport.html" /d:sonar.cs.nunit.reportsPaths="TestResult.xml"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
