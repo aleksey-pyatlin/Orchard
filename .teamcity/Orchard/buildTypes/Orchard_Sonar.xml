@@ -14,7 +14,7 @@
         <parameters>
           <param name="script.content"><![CDATA[dir "c:\Program Files\SonarQube\bin"
 dir "%teamcity.build.checkoutDir%/"
-msbuild --version]]></param>
+msbuild /help]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
