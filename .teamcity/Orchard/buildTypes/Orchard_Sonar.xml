@@ -97,7 +97,7 @@ dir "%teamcity.build.checkoutDir%"
       </runner>
       <runner id="RUNNER_6" name="Run Sonar Analysis and Push Results to Server" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=admin /d:sonar.password=%Sonar.Password%" />
+          <param name="script.content" value="&quot;c:\Program Files\SonarQube\bin\SonarQube.Scanner.MSBuild.exe&quot; end /d:sonar.login=&quot;%Sonar.Login%&quot; /d:sonar.password=&quot;%Sonar.Password%&quot;" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
