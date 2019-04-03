@@ -76,7 +76,7 @@ call nuget restore src\Orchard.sln -Source "https://api.nuget.org/v3/index.json"
           <param name="github_username" value="aleksey-pyatlin" />
           <param name="publisherId" value="githubStatusPublisher" />
           <param name="secure:github_access_token" value="credentialsJSON:090a7323-9489-4ea4-86df-ed0b7f5359d0" />
-          <param name="secure:github_password" value="credentialsJSON:a47d8857-a7c5-4a14-977d-a1c747f342d7" />
+          <param name="secure:github_password" value="credentialsJSON:af45b78f-f623-421f-8a6d-5ea455cd7dcf" />
         </parameters>
       </extension>
     </build-extensions>
